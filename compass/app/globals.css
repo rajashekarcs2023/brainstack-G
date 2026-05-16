@@ -1,0 +1,262 @@
+@import "tailwindcss";
+
+:root {
+  /* Warm sodium-lit watchtower palette */
+  --paper: #0e0c08;
+  --paper-2: #15110a;
+  --paper-3: #1c1810;
+  --ink-100: #f5efde;
+  --ink-200: #d8cfb8;
+  --ink-300: #a89e87;
+  --ink-400: #7a7160;
+  --ink-500: #56503f;
+  --rule: #2d2718;
+  --rule-bright: #44391f;
+
+  /* The sodium streetlight. The watch beacon. */
+  --beacon: #f5b800;
+  --beacon-soft: rgba(245, 184, 0, 0.12);
+  --beacon-bright: rgba(245, 184, 0, 0.45);
+
+  /* Earthy severity */
+  --severity-crit: #d05a3b;
+  --severity-crit-bg: rgba(208, 90, 59, 0.12);
+  --severity-high: #e58a2d;
+  --severity-high-bg: rgba(229, 138, 45, 0.12);
+  --severity-med: #c9a64a;
+  --severity-med-bg: rgba(201, 166, 74, 0.12);
+  --severity-low: #7a9d6d;
+  --severity-low-bg: rgba(122, 157, 109, 0.1);
+
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+  --font-mono: var(--font-mono);
+}
+
+@theme inline {
+  --color-background: var(--paper);
+  --color-foreground: var(--ink-100);
+  --font-sans: var(--font-body);
+  --font-serif: var(--font-display);
+  --font-mono: var(--font-mono);
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  background: var(--paper);
+  color: var(--ink-100);
+}
+
+body {
+  background:
+    radial-gradient(1100px 600px at 8% -10%, rgba(245, 184, 0, 0.05), transparent 60%),
+    radial-gradient(900px 500px at 110% 10%, rgba(208, 90, 59, 0.04), transparent 60%),
+    var(--paper);
+  color: var(--ink-100);
+  font-family: var(--font-body), "Iowan Old Style", Georgia, serif;
+  font-feature-settings: "ss01", "ss02";
+  font-optical-sizing: auto;
+  font-size: 14px;
+  line-height: 1.55;
+  min-height: 100vh;
+}
+
+/* Subtle paper grain over the whole app */
+.noise-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 100;
+  opacity: 0.07;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1   0 0 0 0 0.88   0 0 0 0 0.55   0 0 0 0.4 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+}
+
+/* Typography utilities */
+.font-display {
+  font-family: var(--font-display), "Iowan Old Style", Georgia, serif;
+  font-optical-sizing: auto;
+}
+.font-body {
+  font-family: var(--font-body), "Iowan Old Style", Georgia, serif;
+}
+.font-mono,
+code,
+pre,
+kbd {
+  font-family: var(--font-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-feature-settings: "tnum", "zero", "ss01";
+}
+
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+.label-eyebrow {
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-400);
+  font-feature-settings: "tnum";
+}
+
+.headline {
+  font-family: var(--font-display), serif;
+  font-variation-settings: "SOFT" 50, "WONK" 1, "opsz" 144;
+  letter-spacing: -0.02em;
+  color: var(--ink-100);
+  font-weight: 500;
+}
+
+.headline-italic {
+  font-style: italic;
+  font-variation-settings: "SOFT" 100, "WONK" 1, "opsz" 144;
+}
+
+/* Severity chips */
+.sev-low {
+  background: var(--severity-low-bg);
+  color: var(--severity-low);
+  border-color: rgba(122, 157, 109, 0.3);
+}
+.sev-medium {
+  background: var(--severity-med-bg);
+  color: var(--severity-med);
+  border-color: rgba(201, 166, 74, 0.35);
+}
+.sev-high {
+  background: var(--severity-high-bg);
+  color: var(--severity-high);
+  border-color: rgba(229, 138, 45, 0.4);
+}
+.sev-critical {
+  background: var(--severity-crit-bg);
+  color: var(--severity-crit);
+  border-color: rgba(208, 90, 59, 0.5);
+}
+
+/* Beacon (sodium amber pulse) */
+.beacon-glow {
+  box-shadow:
+    0 0 0 1px var(--beacon-bright),
+    0 0 24px -4px rgba(245, 184, 0, 0.55);
+}
+
+.beacon-text {
+  color: var(--beacon);
+}
+
+@keyframes beacon-pulse {
+  0%, 100% {
+    opacity: 0.65;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.25);
+  }
+}
+.pulse-dot {
+  animation: beacon-pulse 2s ease-in-out infinite;
+}
+
+/* Editorial reveals */
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.fade-up {
+  animation: fade-up 0.5s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+/* Hairline rule */
+.hairline {
+  border-color: var(--rule);
+}
+.hairline-bright {
+  border-color: var(--rule-bright);
+}
+
+/* Log timeline */
+.log-line {
+  border-left: 1px solid var(--rule);
+  padding-left: 0.9rem;
+  margin-left: 0.4rem;
+  position: relative;
+}
+.log-line::before {
+  content: "";
+  position: absolute;
+  left: -3px;
+  top: 0.6rem;
+  width: 6px;
+  height: 6px;
+  border-radius: 9999px;
+  background: var(--ink-500);
+}
+.log-line.accent::before {
+  background: var(--beacon);
+  box-shadow: 0 0 0 3px var(--beacon-soft);
+}
+.log-line.warn::before {
+  background: var(--severity-high);
+}
+.log-line.crit::before {
+  background: var(--severity-crit);
+}
+
+/* Drop cap (editorial flourish) */
+.dropcap::first-letter {
+  font-family: var(--font-display), serif;
+  font-variation-settings: "SOFT" 0, "WONK" 1, "opsz" 144;
+  font-size: 3.4em;
+  line-height: 0.82;
+  float: left;
+  margin: 0.1em 0.12em -0.08em 0;
+  color: var(--beacon);
+  font-weight: 500;
+}
+
+/* Selection */
+::selection {
+  background: var(--beacon);
+  color: var(--paper);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--paper);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--rule);
+  border-radius: 5px;
+  border: 2px solid var(--paper);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--rule-bright);
+}
+
+/* Section markers (decorative) */
+.section-marker::before {
+  content: "§";
+  font-family: var(--font-display), serif;
+  font-style: italic;
+  color: var(--beacon);
+  margin-right: 0.5em;
+  font-size: 1.1em;
+}
