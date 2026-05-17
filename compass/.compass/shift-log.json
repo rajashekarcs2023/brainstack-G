@@ -1,0 +1,173 @@
+[
+  {
+    "timestamp": "2026-05-17T01:55:13.882Z",
+    "kind": "scan_start",
+    "message": "Compass shift started — scanning 1 account(s)",
+    "meta": {
+      "accounts": [
+        "accounts/acme-corp"
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-05-17T01:55:13.883Z",
+    "kind": "scan_start",
+    "message": "Reading memory graph for accounts/acme-corp",
+    "meta": {
+      "account": "accounts/acme-corp"
+    }
+  },
+  {
+    "timestamp": "2026-05-17T01:55:24.151Z",
+    "kind": "signal_detected",
+    "message": "Detected 5 signal(s) on accounts/acme-corp",
+    "meta": {
+      "kinds": [
+        "champion_silence",
+        "stakeholder_change",
+        "renewal_proximity",
+        "sentiment_shift",
+        "cross_account_pattern"
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-05-17T01:55:24.152Z",
+    "kind": "signal_detected",
+    "message": "champion_silence: jordan-chen has not replied in 14 days (last reply 2026-05-02)",
+    "meta": {
+      "signalId": "champion-silence-people/jordan-chen-2026-05-16",
+      "severity": "high"
+    }
+  },
+  {
+    "timestamp": "2026-05-17T01:55:24.152Z",
+    "kind": "signal_detected",
+    "message": "stakeholder_change: Stakeholder change detected 8d ago: Internal note — Jordan promoted",
+    "meta": {
+      "signalId": "stakeholder-change-internal/2026-05-08-promotion-signal",
+      "severity": "high"
+    }
+  },
+  {
+    "timestamp": "2026-05-17T01:55:24.152Z",
+    "kind": "signal_detected",
+    "message": "renewal_proximity: Renewal in 45 days ($240000 ARR)",
+    "meta": {
+      "signalId": "renewal-proximity-accounts/acme-corp-2026-05-16",
+      "severity": "high"
+    }
+  },
+  {
+    "timestamp": "2026-05-17T01:55:24.152Z",
+    "kind": "signal_detected",
+    "message": "sentiment_shift: Frustrated tone detected 18d ago in slack/2026-04-28-devon-bug: pulling the plug, hitting walls, third issue, painful, considering",
+    "meta": {
+      "signalId": "sentiment-shift-slack/2026-04-28-devon-bug",
+      "severity": "high"
+    }
+  },
+  {
+    "timestamp": "2026-05-17T01:55:24.152Z",
+    "kind": "signal_detected",
+    "message": "cross_account_pattern: 3-way cascade: champion silent + technical user frustrated + open commitment unfulfilled. This pattern predicts churn in 87% of YC-stage SaaS accounts.",
+    "meta": {
+      "signalId": "cascading-risk-accounts/acme-corp-2026-05-16",
+      "severity": "critical"
+    }
+  },
+  {
+    "timestamp": "2026-05-17T01:55:24.152Z",
+    "kind": "action_drafted",
+    "message": "Drafting action for: jordan-chen has not replied in 14 days (last reply 2026-05-02)",
+    "meta": {
+      "signalId": "champion-silence-people/jordan-chen-2026-05-16"
+    }
+  },
+  {
+    "timestamp": "2026-05-17T01:55:35.756Z",
+    "kind": "action_drafted",
+    "message": "draft_email ready for approval → maria-santos",
+    "meta": {
+      "actionId": "action-champion-silence-people/jordan-chen-2026-05-16",
+      "type": "draft_email"
+    }
+  },
+  {
+    "timestamp": "2026-05-17T01:55:35.757Z",
+    "kind": "action_drafted",
+    "message": "Drafting action for: Stakeholder change detected 8d ago: Internal note — Jordan promoted",
+    "meta": {
+      "signalId": "stakeholder-change-internal/2026-05-08-promotion-signal"
+    }
+  },
+  {
+    "timestamp": "2026-05-17T01:55:47.428Z",
+    "kind": "action_drafted",
+    "message": "draft_email ready for approval → priya-iyer",
+    "meta": {
+      "actionId": "action-stakeholder-change-internal/2026-05-08-promotion-signal",
+      "type": "draft_email"
+    }
+  },
+  {
+    "timestamp": "2026-05-17T01:55:47.428Z",
+    "kind": "action_drafted",
+    "message": "Drafting action for: Renewal in 45 days ($240000 ARR)",
+    "meta": {
+      "signalId": "renewal-proximity-accounts/acme-corp-2026-05-16"
+    }
+  },
+  {
+    "timestamp": "2026-05-17T01:55:54.608Z",
+    "kind": "action_drafted",
+    "message": "draft_email ready for approval → maria-santos",
+    "meta": {
+      "actionId": "action-renewal-proximity-accounts/acme-corp-2026-05-16",
+      "type": "draft_email"
+    }
+  },
+  {
+    "timestamp": "2026-05-17T01:55:54.608Z",
+    "kind": "action_drafted",
+    "message": "Drafting action for: Frustrated tone detected 18d ago in slack/2026-04-28-devon-bug: pulling the plug, hitting walls, third issue, painful, considering",
+    "meta": {
+      "signalId": "sentiment-shift-slack/2026-04-28-devon-bug"
+    }
+  },
+  {
+    "timestamp": "2026-05-17T01:56:04.243Z",
+    "kind": "action_drafted",
+    "message": "draft_email ready for approval → people/jordan-chen",
+    "meta": {
+      "actionId": "action-sentiment-shift-slack/2026-04-28-devon-bug",
+      "type": "draft_email"
+    }
+  },
+  {
+    "timestamp": "2026-05-17T01:56:04.243Z",
+    "kind": "action_drafted",
+    "message": "Drafting action for: 3-way cascade: champion silent + technical user frustrated + open commitment unfulfilled. This pattern predicts churn in 87% of YC-stage SaaS accounts.",
+    "meta": {
+      "signalId": "cascading-risk-accounts/acme-corp-2026-05-16"
+    }
+  },
+  {
+    "timestamp": "2026-05-17T01:56:14.089Z",
+    "kind": "action_drafted",
+    "message": "slack_dm_csm ready for approval → assigned-csm",
+    "meta": {
+      "actionId": "action-cascading-risk-accounts/acme-corp-2026-05-16",
+      "type": "slack_dm_csm"
+    }
+  },
+  {
+    "timestamp": "2026-05-17T01:56:14.089Z",
+    "kind": "scan_done",
+    "message": "Shift complete: 5 signals, 5 actions queued",
+    "meta": {
+      "signals": 5,
+      "actions": 5
+    }
+  }
+]

@@ -1,0 +1,101 @@
+[
+  {
+    "id": "champion-silence-people/jordan-chen-2026-05-16",
+    "kind": "champion_silence",
+    "severity": "high",
+    "account": "accounts/acme-corp",
+    "entities": [
+      "people/jordan-chen"
+    ],
+    "evidence": [
+      {
+        "slug": "emails/2026-04-30-bug-eta",
+        "quote": "**Subject:** Trace export fix — ETA 2026-05-05"
+      },
+      {
+        "slug": "emails/2026-03-14-kickoff-recap",
+        "quote": "**Subject:** Great kickoff — recap & next steps"
+      },
+      {
+        "slug": "emails/2026-04-22-soc2-delivered",
+        "quote": "**Subject:** SOC2 Type II report — delivered ✓"
+      }
+    ],
+    "detectedAt": "2026-05-16T09:00:00.000Z",
+    "summary": "jordan-chen has not replied in 14 days (last reply 2026-05-02)"
+  },
+  {
+    "id": "stakeholder-change-internal/2026-05-08-promotion-signal",
+    "kind": "stakeholder_change",
+    "severity": "high",
+    "account": "accounts/acme-corp",
+    "entities": [
+      "people/jordan-chen"
+    ],
+    "evidence": [
+      {
+        "slug": "internal/2026-05-08-promotion-signal",
+        "quote": "# Internal note — Jordan promoted"
+      }
+    ],
+    "detectedAt": "2026-05-16T09:00:00.000Z",
+    "summary": "Stakeholder change detected 8d ago: Internal note — Jordan promoted"
+  },
+  {
+    "id": "renewal-proximity-accounts/acme-corp-2026-05-16",
+    "kind": "renewal_proximity",
+    "severity": "high",
+    "account": "accounts/acme-corp",
+    "entities": [],
+    "evidence": [
+      {
+        "slug": "accounts/acme-corp",
+        "quote": "Renewal 2026-07-01 (45d), ARR $240000"
+      }
+    ],
+    "detectedAt": "2026-05-16T09:00:00.000Z",
+    "summary": "Renewal in 45 days ($240000 ARR)"
+  },
+  {
+    "id": "sentiment-shift-slack/2026-04-28-devon-bug",
+    "kind": "sentiment_shift",
+    "severity": "high",
+    "account": "accounts/acme-corp",
+    "entities": [],
+    "evidence": [
+      {
+        "slug": "slack/2026-04-28-devon-bug",
+        "quote": "\"pulling the plug\" / \"hitting walls\" / \"third issue\" / \"painful\" / \"considering\""
+      }
+    ],
+    "detectedAt": "2026-05-16T09:00:00.000Z",
+    "summary": "Frustrated tone detected 18d ago in slack/2026-04-28-devon-bug: pulling the plug, hitting walls, third issue, painful, considering"
+  },
+  {
+    "id": "cascading-risk-accounts/acme-corp-2026-05-16",
+    "kind": "cross_account_pattern",
+    "severity": "critical",
+    "account": "accounts/acme-corp",
+    "entities": [
+      "people/jordan-chen",
+      "people/devon-park",
+      "emails/2026-03-14-kickoff-recap"
+    ],
+    "evidence": [
+      {
+        "slug": "people/jordan-chen",
+        "quote": "jordan-chen has not replied in 14 days (last reply 2026-05-02)"
+      },
+      {
+        "slug": "slack/2026-04-28-devon-bug",
+        "quote": "Technical user frustrated: pulling the plug, hitting walls, considering, painful, third issue"
+      },
+      {
+        "slug": "emails/2026-03-14-kickoff-recap",
+        "quote": "Open commitment: 2. **SAML SSO support** — committed for **Q3 2026** (target Aug)"
+      }
+    ],
+    "detectedAt": "2026-05-16T09:00:00.000Z",
+    "summary": "3-way cascade: champion silent + technical user frustrated + open commitment unfulfilled. This pattern predicts churn in 87% of YC-stage SaaS accounts."
+  }
+]

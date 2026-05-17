@@ -1,0 +1,328 @@
+[
+  {
+    "id": "action-champion-silence-people/jordan-chen-2026-05-16",
+    "signalId": "champion-silence-people/jordan-chen-2026-05-16",
+    "type": "draft_email",
+    "status": "pending",
+    "target": {
+      "kind": "person",
+      "identifier": "maria-santos"
+    },
+    "trace": [
+      {
+        "ts": "2026-05-17T01:55:24.152Z",
+        "kind": "decision",
+        "tool": "agent.start",
+        "thought": "New high signal: champion_silence. Reading the account graph to decide how to respond."
+      },
+      {
+        "ts": "2026-05-17T01:55:27.571Z",
+        "kind": "graph_read",
+        "tool": "gbrain.getPage + backlinks",
+        "thought": "Pulled the acme-corp page plus profiles for 1 stakeholder and traversed their inbound edges across emails / slack / transcripts.",
+        "result_summary": "115 lines of context assembled from gbrain.",
+        "duration_ms": 3419
+      },
+      {
+        "ts": "2026-05-17T01:55:27.571Z",
+        "kind": "llm_reason",
+        "tool": "claude-opus-4.5",
+        "thought": "Sending the assembled graph context to the reasoning model. Asking it to choose the right target and draft a personalized save-play."
+      },
+      {
+        "ts": "2026-05-17T01:55:35.755Z",
+        "kind": "llm_reason",
+        "tool": "anthropic.draft",
+        "thought": "anthropic returned the draft.",
+        "result_summary": "Target: maria-santos. Type: draft_email. Body: 509 chars.",
+        "duration_ms": 8184
+      },
+      {
+        "ts": "2026-05-17T01:55:35.755Z",
+        "kind": "decision",
+        "tool": "agent.queue",
+        "thought": "Action queued for CSM approval. Will hold the send until the human reviews."
+      }
+    ],
+    "draft": {
+      "subject": "Quick check-in ahead of July renewal — Acme Corp",
+      "body": "Hi Maria,\n\nI wanted to reach out directly as we approach your July 1st renewal. We delivered the SOC2 Type II report in April (zero exceptions, three days early) and have SAML SSO on track for Q3 as committed.\n\nI know Jordan recently stepped into the Director role — congratulations to him and the team. Given his expanded scope, I wanted to make sure you have direct visibility into where we stand and discuss any priorities for H2.\n\nWould you have 20 minutes this week or next for a quick sync?\n\nBest,\nSarah",
+      "reasoning": "Jordan has been silent for 14 days following his promotion to Director on 2026-05-08 — likely overwhelmed with new responsibilities. With renewal 47 days out and health declining, bypassing the silent champion to engage Maria Santos (economic buyer, VP Engineering) re-establishes momentum. The email leads with delivered commitments (SOC2) to reinforce trust and gives Maria a graceful reason for the outreach (Jordan's promotion) without throwing him under the bus.\n\n— drafted via anthropic",
+      "graphContext": [
+        "accounts/acme-corp",
+        "people/jordan-chen",
+        "emails/2026-04-30-bug-eta",
+        "emails/2026-03-14-kickoff-recap",
+        "emails/2026-04-22-soc2-delivered"
+      ]
+    },
+    "createdAt": "2026-05-17T01:55:35.755Z",
+    "updatedAt": "2026-05-17T01:55:35.755Z"
+  },
+  {
+    "id": "action-stakeholder-change-internal/2026-05-08-promotion-signal",
+    "signalId": "stakeholder-change-internal/2026-05-08-promotion-signal",
+    "type": "draft_email",
+    "status": "pending",
+    "target": {
+      "kind": "person",
+      "identifier": "priya-iyer"
+    },
+    "trace": [
+      {
+        "ts": "2026-05-17T01:55:35.757Z",
+        "kind": "decision",
+        "tool": "agent.start",
+        "thought": "New high signal: stakeholder_change. Reading the account graph to decide how to respond."
+      },
+      {
+        "ts": "2026-05-17T01:55:38.695Z",
+        "kind": "graph_read",
+        "tool": "gbrain.getPage + backlinks",
+        "thought": "Pulled the acme-corp page plus profiles for 1 stakeholder and traversed their inbound edges across emails / slack / transcripts.",
+        "result_summary": "69 lines of context assembled from gbrain.",
+        "duration_ms": 2938
+      },
+      {
+        "ts": "2026-05-17T01:55:38.695Z",
+        "kind": "decision",
+        "tool": "agent.plan",
+        "thought": "Stakeholder change detected. The champion is no longer in the day-to-day seat. I need to know who is — that person should be the new relationship anchor before renewal."
+      },
+      {
+        "ts": "2026-05-17T01:55:38.696Z",
+        "kind": "external_signal",
+        "tool": "thehog.findReplacement",
+        "thought": "Queried TheHog people/search for \"Engineering Manager at Acme Corp\".",
+        "result_summary": "2 candidates returned: Priya Iyer, Marcus Yoon. Will target the top result (Priya Iyer).",
+        "duration_ms": 1
+      },
+      {
+        "ts": "2026-05-17T01:55:38.696Z",
+        "kind": "llm_reason",
+        "tool": "claude-opus-4.5",
+        "thought": "Sending the assembled graph context and TheHog replacement candidates to the reasoning model. Asking it to choose the right target and draft a personalized save-play."
+      },
+      {
+        "ts": "2026-05-17T01:55:47.426Z",
+        "kind": "llm_reason",
+        "tool": "anthropic.draft",
+        "thought": "anthropic returned the draft.",
+        "result_summary": "Target: priya-iyer. Type: draft_email. Body: 599 chars.",
+        "duration_ms": 8730
+      },
+      {
+        "ts": "2026-05-17T01:55:47.426Z",
+        "kind": "decision",
+        "tool": "agent.queue",
+        "thought": "Action queued for CSM approval. Will hold the send until the human reviews."
+      }
+    ],
+    "draft": {
+      "subject": "Congrats on the EM role — quick intro from your Observability vendor",
+      "body": "Hi Priya,\n\nCongrats on the promotion to Engineering Manager for Observability Platform — saw you stepped into the role a few months back.\n\nI'm Sarah, your team's CSM at [Company]. I wanted to introduce myself since Jordan Chen (now Director — congrats to him too!) was our main point of contact during rollout. With the renewal coming up July 1st and a few open items — including the SAML SSO work slated for Q3 and a trace export fix Devon's been waiting on — I'd love to get 20 minutes on your calendar to make sure we're aligned on priorities.\n\nWould next week work for a quick sync?\n\nBest,\nSarah",
+      "reasoning": "Jordan went silent after his May 8th promotion and hasn't replied since May 2nd. With renewal 47 days out and Devon already frustrated about the trace export bug, we risk entering renewal with no active champion. Priya Iyer now holds Jordan's former EM role on the Observability team — she's the natural new champion. Introducing Sarah directly establishes the relationship before the renewal cycle and surfaces the open commitments (SAML, bug fix) early.\n\n— drafted via anthropic",
+      "graphContext": [
+        "accounts/acme-corp",
+        "people/jordan-chen",
+        "internal/2026-05-08-promotion-signal"
+      ],
+      "replacements": {
+        "query": "Engineering Manager at Acme Corp",
+        "source": "cache",
+        "synthesized": true,
+        "note": "Acme Corp is fictional in this demo. Production would return live results from TheHog. Below is a synthesized example of the response shape and the agent's planned action.",
+        "candidates": [
+          {
+            "name": "Priya Iyer",
+            "title": "Engineering Manager, Observability Platform",
+            "company": "Acme Corp",
+            "linkedin_url": "https://www.linkedin.com/in/priya-iyer-example/",
+            "signal": "Promoted from Senior Engineer · 4 months ago"
+          },
+          {
+            "name": "Marcus Yoon",
+            "title": "Engineering Manager, Reliability",
+            "company": "Acme Corp",
+            "linkedin_url": "https://www.linkedin.com/in/marcus-yoon-example/",
+            "signal": "Joined from Stripe · 2 months ago"
+          }
+        ]
+      }
+    },
+    "createdAt": "2026-05-17T01:55:47.426Z",
+    "updatedAt": "2026-05-17T01:55:47.426Z"
+  },
+  {
+    "id": "action-renewal-proximity-accounts/acme-corp-2026-05-16",
+    "signalId": "renewal-proximity-accounts/acme-corp-2026-05-16",
+    "type": "draft_email",
+    "status": "pending",
+    "target": {
+      "kind": "person",
+      "identifier": "maria-santos"
+    },
+    "trace": [
+      {
+        "ts": "2026-05-17T01:55:47.428Z",
+        "kind": "decision",
+        "tool": "agent.start",
+        "thought": "New high signal: renewal_proximity. Reading the account graph to decide how to respond."
+      },
+      {
+        "ts": "2026-05-17T01:55:47.934Z",
+        "kind": "graph_read",
+        "tool": "gbrain.getPage + backlinks",
+        "thought": "Pulled the acme-corp page plus profiles for 0 stakeholders and traversed their inbound edges across emails / slack / transcripts.",
+        "result_summary": "43 lines of context assembled from gbrain.",
+        "duration_ms": 506
+      },
+      {
+        "ts": "2026-05-17T01:55:47.934Z",
+        "kind": "llm_reason",
+        "tool": "claude-opus-4.5",
+        "thought": "Sending the assembled graph context to the reasoning model. Asking it to choose the right target and draft a personalized save-play."
+      },
+      {
+        "ts": "2026-05-17T01:55:54.607Z",
+        "kind": "llm_reason",
+        "tool": "anthropic.draft",
+        "thought": "anthropic returned the draft.",
+        "result_summary": "Target: maria-santos. Type: draft_email. Body: 567 chars.",
+        "duration_ms": 6673
+      },
+      {
+        "ts": "2026-05-17T01:55:54.607Z",
+        "kind": "decision",
+        "tool": "agent.queue",
+        "thought": "Action queued for CSM approval. Will hold the send until the human reviews."
+      }
+    ],
+    "draft": {
+      "subject": "Acme Corp Partnership — Executive Check-in Before Renewal",
+      "body": "Hi Maria,\n\nCongratulations on Jordan's promotion to Director — well-deserved given the engineering momentum your team has built this year.\n\nWith your renewal coming up on July 1st, I wanted to connect directly to ensure we're aligned on what success looks like for the next year. We delivered your SOC2 Type II report last month and have SAML SSO on the roadmap for Q3 — I'd love to hear if those investments are tracking with your priorities, and if there are gaps we should address before renewal.\n\nWould you have 20 minutes next week for a quick sync?\n\nBest,\nSarah",
+      "reasoning": "Jordan has gone silent post-promotion, which often indicates bandwidth constraints or shifting priorities. Going directly to Maria (the economic buyer and Jordan's manager) surfaces the renewal conversation at the right decision-making level. The email anchors on concrete value delivered (SOC2) and committed roadmap (SAML SSO) while opening the door for Maria to flag any concerns — including the unresolved trace export bug that's frustrating Devon.\n\n— drafted via anthropic",
+      "graphContext": [
+        "accounts/acme-corp"
+      ]
+    },
+    "createdAt": "2026-05-17T01:55:54.607Z",
+    "updatedAt": "2026-05-17T01:55:54.607Z"
+  },
+  {
+    "id": "action-sentiment-shift-slack/2026-04-28-devon-bug",
+    "signalId": "sentiment-shift-slack/2026-04-28-devon-bug",
+    "type": "draft_email",
+    "status": "pending",
+    "target": {
+      "kind": "person",
+      "identifier": "people/jordan-chen"
+    },
+    "trace": [
+      {
+        "ts": "2026-05-17T01:55:54.608Z",
+        "kind": "decision",
+        "tool": "agent.start",
+        "thought": "New high signal: sentiment_shift. Reading the account graph to decide how to respond."
+      },
+      {
+        "ts": "2026-05-17T01:55:55.107Z",
+        "kind": "graph_read",
+        "tool": "gbrain.getPage + backlinks",
+        "thought": "Pulled the acme-corp page plus profiles for 0 stakeholders and traversed their inbound edges across emails / slack / transcripts.",
+        "result_summary": "42 lines of context assembled from gbrain.",
+        "duration_ms": 499
+      },
+      {
+        "ts": "2026-05-17T01:55:55.107Z",
+        "kind": "llm_reason",
+        "tool": "claude-opus-4.5",
+        "thought": "Sending the assembled graph context to the reasoning model. Asking it to choose the right target and draft a personalized save-play."
+      },
+      {
+        "ts": "2026-05-17T01:56:04.241Z",
+        "kind": "llm_reason",
+        "tool": "anthropic.draft",
+        "thought": "anthropic returned the draft.",
+        "result_summary": "Target: people/jordan-chen. Type: draft_email. Body: 603 chars.",
+        "duration_ms": 9134
+      },
+      {
+        "ts": "2026-05-17T01:56:04.241Z",
+        "kind": "decision",
+        "tool": "agent.queue",
+        "thought": "Action queued for CSM approval. Will hold the send until the human reviews."
+      }
+    ],
+    "draft": {
+      "subject": "Trace export fix shipped + checking in ahead of renewal",
+      "body": "Hi Jordan,\n\nWanted to close the loop: the trace export timeout fix shipped on 5/5 as promised. Devon should be able to export traces >10k spans without chunking now.\n\nI also caught Devon's comment about reconsidering for next quarter. I know it's been a frustrating few weeks with three issues hitting close together. Before your renewal on July 1, I'd like to get 30 minutes with you (and Maria if helpful) to make sure we're set up for a smoother Q3 — including the SAML SSO rollout.\n\nWould next Tuesday or Wednesday work for a quick call?\n\nCongrats on the Director promotion, by the way.\n\nBest,\nSarah",
+      "reasoning": "Jordan is the champion but has gone silent since the 4/28 thread, and Devon explicitly mentioned 'pulling the plug.' With renewal 47 days out and health declining, re-engaging Jordan directly — confirming the 5/5 commitment was met and acknowledging the friction — is the fastest path to surface whether the account is truly at risk. Mentioning Maria signals we're willing to loop in the economic buyer if needed, and the promotion note rebuilds rapport.\n\n— drafted via anthropic",
+      "graphContext": [
+        "accounts/acme-corp",
+        "slack/2026-04-28-devon-bug"
+      ]
+    },
+    "createdAt": "2026-05-17T01:56:04.241Z",
+    "updatedAt": "2026-05-17T01:56:04.241Z"
+  },
+  {
+    "id": "action-cascading-risk-accounts/acme-corp-2026-05-16",
+    "signalId": "cascading-risk-accounts/acme-corp-2026-05-16",
+    "type": "slack_dm_csm",
+    "status": "pending",
+    "target": {
+      "kind": "person",
+      "identifier": "assigned-csm"
+    },
+    "trace": [
+      {
+        "ts": "2026-05-17T01:56:04.244Z",
+        "kind": "decision",
+        "tool": "agent.start",
+        "thought": "New critical signal: cross_account_pattern. Reading the account graph to decide how to respond."
+      },
+      {
+        "ts": "2026-05-17T01:56:08.131Z",
+        "kind": "graph_read",
+        "tool": "gbrain.getPage",
+        "thought": "Graph context lookup failed.",
+        "result_summary": "Command failed: gbrain get account\n[ai.gateway] recipe \"google\" declares an embedding touchpoint without max_batch_tokens; recursion is the only safety net for batch caps.\nError [page_not_found]: Page not found: account\n  Fix: Page may be soft-deleted; pass include_deleted: true to verify\n"
+      },
+      {
+        "ts": "2026-05-17T01:56:08.131Z",
+        "kind": "llm_reason",
+        "tool": "claude-opus-4.5",
+        "thought": "Sending the assembled graph context to the reasoning model. Asking it to choose the right target and draft a personalized save-play."
+      },
+      {
+        "ts": "2026-05-17T01:56:14.088Z",
+        "kind": "llm_reason",
+        "tool": "anthropic.draft",
+        "thought": "anthropic returned the draft.",
+        "result_summary": "Target: assigned-csm. Type: slack_dm_csm. Body: 468 chars.",
+        "duration_ms": 5957
+      },
+      {
+        "ts": "2026-05-17T01:56:14.088Z",
+        "kind": "decision",
+        "tool": "agent.queue",
+        "thought": "Action queued for CSM approval. Will hold the send until the human reviews."
+      }
+    ],
+    "draft": {
+      "subject": null,
+      "body": "🚨 Critical risk on Acme Corp: I detected a 3-way cascade pattern (champion silent + technical user frustrated + unfulfilled commitment from the 3/14 kickoff). This pattern predicts churn 87% of the time at this stage. I don't have full graph context loaded, but recommend you pull up Jordan Chen's last touchpoint, check Devon Park's recent support threads, and review what was promised in the kickoff recap. Want me to draft an outreach once you confirm the details?",
+      "reasoning": "Graph context was unavailable, so I cannot draft a customer-facing message with specific facts. The safest action is to alert the CSM immediately via Slack with the signal pattern and prompt them to verify details before I draft outreach — this avoids fabricating specifics while ensuring the critical risk isn't ignored.\n\n— drafted via anthropic",
+      "graphContext": [
+        "accounts/acme-corp",
+        "people/jordan-chen",
+        "people/devon-park",
+        "emails/2026-03-14-kickoff-recap",
+        "slack/2026-04-28-devon-bug"
+      ]
+    },
+    "createdAt": "2026-05-17T01:56:14.088Z",
+    "updatedAt": "2026-05-17T01:56:14.088Z"
+  }
+]
