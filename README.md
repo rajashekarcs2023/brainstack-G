@@ -1,10 +1,6 @@
 # Compass
 
-Five-agent autonomous swarm over a typed memory graph (gbrain), with LLM reasoning, external enrichment (TheHog), and real outbound dispatch (Telegram / Slack / Discord / webhook).
-
-The application lives in [`./compass`](./compass). Hackathon entry for GStack × GBrain (2026-05-16).
-
----
+Compass is the autonomous AI back-office that lives on Telegram for small-business owners — five specialized agents watching every customer, on a persistent memory graph, replacing the assistant they can't afford to hire.
 
 ## Repository layout
 
@@ -19,7 +15,6 @@ The application lives in [`./compass`](./compass). Hackathon entry for GStack ×
     ├── lib/                   agent, dispatch, gbrain, thehog, store
     ├── data/acme/             seeded gbrain corpus for the live vertical
     ├── .compass/              runtime state (gitignored)
-    ├── YC.md                  pitch / one-pager
     ├── package.json
     └── next.config.ts
 ```
