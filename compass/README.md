@@ -134,7 +134,7 @@ Open `http://localhost:3000`. The dashboard auto-fires the first shift on mount;
 5. **Approve & Send.** Real HTTP POST to Telegram. Card flips to delivered.
 6. **Ask Compass.** Type any question about the account. Watch the 3D graph particles flow along cited edges. Hand the mouse to a judge.
 
-Full pitch script: `PITCH.md`.
+Full pitch script: [`../PITCH.md`](../PITCH.md).
 
 ---
 
@@ -220,7 +220,8 @@ compass/
 │   ├── actions.json                   action queue
 │   ├── signals.json                   detected signals
 │   └── shift-log.json                 event stream
-└── PITCH.md                           90-second pitch script + Q&A backup
+└── (project root)
+    └── PITCH.md                       90-second pitch script + Q&A backup
 ```
 
 ---
