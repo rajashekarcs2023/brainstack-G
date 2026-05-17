@@ -1,0 +1,18 @@
+{
+  "https://www.linkedin.com/in/garrytan/": {
+    "ok": true,
+    "operationId": "0f2d9b80-6aa9-4a4e-81c8-f8bde791d6e3",
+    "fetched_at": "2026-05-16T23:30:00Z",
+    "raw": {
+      "contact": { "email": ["garry@ycombinator.com"] },
+      "profile.title": null,
+      "profile.location": null,
+      "profile.company.name": null
+    },
+    "current_title": null,
+    "current_company": null,
+    "email": "garry@ycombinator.com",
+    "phone": null,
+    "source": "thehog.ai /api/enrichments"
+  }
+}

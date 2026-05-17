@@ -1,0 +1,27 @@
+{
+  "Engineering Manager|Acme Corp": {
+    "ok": true,
+    "fetched_at": "2026-05-16T23:55:00Z",
+    "query": "Engineering Manager at Acme Corp",
+    "note": "Acme Corp is fictional in this demo. Production would return live results from TheHog. Below is a synthesized example of the response shape and the agent's planned action.",
+    "synthesized": true,
+    "candidates": [
+      {
+        "name": "Priya Iyer",
+        "title": "Engineering Manager, Observability Platform",
+        "company": "Acme Corp",
+        "linkedin_url": "https://www.linkedin.com/in/priya-iyer-example/",
+        "tenure_months": 4,
+        "signal": "Promoted from Senior Engineer · 4 months ago"
+      },
+      {
+        "name": "Marcus Yoon",
+        "title": "Engineering Manager, Reliability",
+        "company": "Acme Corp",
+        "linkedin_url": "https://www.linkedin.com/in/marcus-yoon-example/",
+        "tenure_months": 2,
+        "signal": "Joined from Stripe · 2 months ago"
+      }
+    ]
+  }
+}
