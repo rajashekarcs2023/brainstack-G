@@ -2,8 +2,6 @@
 
 An autonomous AI back-office for any small or mid-sized business owner who manages key customer relationships personally. Five specialized agents watch your customers continuously, ground their reasoning in a typed memory graph, and DM you on Telegram with what needs you today.
 
-Built at the **GStack × GBrain Hackathon**, May 16 2026.
-
 ---
 
 ## What it is
